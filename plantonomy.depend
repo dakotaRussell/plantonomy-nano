@@ -1,0 +1,30 @@
+# depslib dependency file v1.0
+1729275141 source:/home/nano/Documents/led_blink/plantonomy/main.cpp
+	<stdio.h>
+	<unistd.h>
+	<stdlib.h>
+	<string.h>
+	<iostream>
+	<chrono>
+	<thread>
+	<signal.h>
+	<JetsonGPIO.h>
+	"i2c/i2c.h"
+
+1729017069 /home/nano/Documents/libi2c/include/i2c/i2c.h
+	<sys/types.h>
+	<linux/i2c.h>
+	<linux/i2c-dev.h>
+
+1729041364 source:/home/nano/Documents/led_blink/plantonomy/i2c_demo.cpp
+	<stdio.h>
+	<unistd.h>
+	<stdlib.h>
+	<string.h>
+	<iostream>
+	<chrono>
+	<thread>
+	<signal.h>
+	<JetsonGPIO.h>
+	"i2c/i2c.h"
+
