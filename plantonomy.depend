@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1729546935 source:/home/nano/Documents/projects/plantonomy-nano/src/main.cpp
+1730404907 source:/home/nano/Documents/projects/plantonomy-nano/src/main.cpp
 	<stdio.h>
 	<unistd.h>
 	<stdlib.h>
@@ -9,10 +9,16 @@
 	<thread>
 	<signal.h>
 	<JetsonGPIO.h>
-	"i2c.h"
+	"ADS1115.h"
 
 1729017069 /home/nano/Documents/projects/plantonomy-nano/include/external/i2c.h
 	<sys/types.h>
 	<linux/i2c.h>
 	<linux/i2c-dev.h>
+
+1730405097 /home/nano/Documents/projects/plantonomy-nano/include/plantonomy/ADS1115.h
+	"i2c.h"
+	<cstdint>
+	<iostream>
+	<cstring>
 

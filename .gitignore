@@ -1,4 +1,7 @@
-# Prerequisites
+# Code Block Save Files
+*.save
+
+# # Prerequisites
 *.d
 
 # Compiled Object files
