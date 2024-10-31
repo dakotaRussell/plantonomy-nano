@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1730404907 source:/home/nano/Documents/projects/plantonomy-nano/src/main.cpp
+1730416130 source:/home/nano/Documents/projects/plantonomy-nano/src/main.cpp
 	<stdio.h>
 	<unistd.h>
 	<stdlib.h>
@@ -10,6 +10,7 @@
 	<signal.h>
 	<JetsonGPIO.h>
 	"ADS1115.h"
+	"udpServer.h"
 
 1729017069 /home/nano/Documents/projects/plantonomy-nano/include/external/i2c.h
 	<sys/types.h>
@@ -21,4 +22,20 @@
 	<cstdint>
 	<iostream>
 	<cstring>
+
+1730405366 source:/home/nano/Documents/projects/plantonomy-nano/src/modules/ADS1115.cpp
+	"ADS1115.h"
+
+1730414413 /home/nano/Documents/projects/plantonomy-nano/include/plantonomy/udpServer.h
+	<bits/stdc++.h>
+	<stdlib.h>
+	<unistd.h>
+	<string.h>
+	<sys/types.h>
+	<sys/socket.h>
+	<arpa/inet.h>
+	<netinet/in.h>
+
+1730416151 source:/home/nano/Documents/projects/plantonomy-nano/src/udpServer.cpp
+	"udpServer.h"
 

@@ -12,10 +12,12 @@
 #include <signal.h>
 #include <JetsonGPIO.h>
 #include "ADS1115.h"
+#include "udpServer.h"
 
 int main()
 {
     ADS1115 adc = ADS1115("/dev/i2c-1", 0xC2, 0xE3);
+    udpServer server = udpServer();
 
     fprintf(stdout, "\nPrepare ADC read....\n");
     int i = 0;
@@ -25,6 +27,9 @@ int main()
         // Read from ADC.
         double val = adc.calculateAnalogValue();
         // Do something with val.
+        char buffer[MAXLINE];
+        sprintf(buffer, "Last calculated analog value: %.4f", val);
+        server.writeUdp(buffer);
         sleep(1);
     }
 
