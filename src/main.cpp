@@ -11,7 +11,8 @@
 // Signal handling
 #include <signal.h>
 #include <JetsonGPIO.h>
-#include "i2c/i2c.h"
+#include "i2c.h"
+//#include "Plantonomy.h"//
 
 #define DEFAULT_I2C_ADDR 0x48
 #define CONVERSION_REG_ADDR 0x00
@@ -51,7 +52,6 @@ int main()
     /* Fill i2c device struct */
     device.bus = fd;
     device.addr = DEFAULT_I2C_ADDR;
-    device.page_bytes = 8;
 
     /* Print i2c device description */
     char i2c_dev_desc[128];
@@ -71,13 +71,9 @@ int main()
 
         fprintf(stderr, "Config write error! ADS1115 is not configured.\n");
         exit(-4);
-    }fprintf(stdout, "\nConfig write success, prepare ADC read....\n");
+    }
 
-    /* Read */
-   // unsigned char buf[256];
-   // size_t buf_size = 2;
-    //ssize_t ret;
-
+    fprintf(stdout, "\nConfig write success, prepare ADC read....\n");
 
     int i = 0;
     while(i++ <= 200)

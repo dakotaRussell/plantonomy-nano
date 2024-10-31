@@ -22,6 +22,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -30,14 +31,13 @@
 		</Build>
 		<Compiler>
 			<Add option="-Wall" />
-			<Add option="-fexceptions" />
-			<Add directory="/home/nano/Documents/libi2c/include" />
+			<Add directory="include/external" />
 		</Compiler>
 		<Linker>
-			<Add library="JetsonGPIO" />
-			<Add library="/home/nano/Documents/libi2c/libi2c.so" />
+			<Add library="lib/libi2c.so" />
 		</Linker>
-		<Unit filename="main.cpp" />
+		<Unit filename="include/external/i2c.h" />
+		<Unit filename="src/main.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />
