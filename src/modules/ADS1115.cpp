@@ -11,7 +11,13 @@ ADS1115::ADS1115(const char* deviceAddr, unsigned char configA, unsigned char co
     buf_size = 2;
     i2cReadHandle = i2c_read;
     i2cWriteHandle = i2c_write;
+    this->deviceAddr = deviceAddr;
+    const unsigned char config[2]{configA, configB};
+    this->open(config, 2);
+}
 
+void ADS1115::open(const unsigned char* configOptions, size_t len)
+{
     /* First open i2c bus */
     int fd;
     if ((fd = i2c_open(deviceAddr)) == -1) {
@@ -33,10 +39,17 @@ ADS1115::ADS1115(const char* deviceAddr, unsigned char configA, unsigned char co
     fprintf(stdout, "%s\n", i2c_get_device_desc(&device, i2c_dev_desc, sizeof(i2c_dev_desc)));
 
     /* Configure i2c device-specific information. */
-    memset(buf, 0, sizeof(buf));
-    buf[0]=configA, buf[1] = configB;
+    memset(this->buf, 0, sizeof(this->buf));
+
+    if (len != 2)
+    {
+        fprintf(stderr, "Insufficient number of configuration parameters.\n");
+        exit(-4);
+    }
+
+    buf[0]=configOptions[0], buf[1] = configOptions[1];
     fprintf(stdout, "Writing configuration...\n");
-    printI2cData(buf, buf_size);
+    //this->printI2cData(buf, buf_size);
 
     ssize_t ret = i2cWriteHandle(&device, CONFIG_REG_ADDR, buf, buf_size);
     if (ret == -1 || (size_t)ret != buf_size)
@@ -47,9 +60,10 @@ ADS1115::ADS1115(const char* deviceAddr, unsigned char configA, unsigned char co
     }
 
     fprintf(stdout, "Config write success. ADS1115 is configured...\n");
+
 }
 
-double ADS1115::calculateAnalogValue()
+double ADS1115::read()
 {
     uint16_t digVal = readDigitalValue();
 
@@ -57,6 +71,12 @@ double ADS1115::calculateAnalogValue()
     double voltage = 4.096*digVal/32768;
     fprintf(stdout, "Calculated data: %lf\n", voltage);
     return voltage;
+}
+
+ssize_t ADS1115::write(const unsigned char *buf, size_t len)
+{
+    // unused
+    return 0;
 }
 
 void ADS1115::printI2cData(const unsigned char *data, size_t len)

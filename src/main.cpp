@@ -25,7 +25,7 @@ int main()
     {
         usleep(100000);
         // Read from ADC.
-        double val = adc.calculateAnalogValue();
+        double val = adc.read();
         // Do something with val.
         char buffer[MAXLINE];
         sprintf(buffer, "Last calculated analog value: %.4f", val);

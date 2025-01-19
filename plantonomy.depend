@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1730416130 source:/home/nano/Documents/projects/plantonomy-nano/src/main.cpp
+1732395864 source:/home/nano/Documents/projects/plantonomy-nano/src/main.cpp
 	<stdio.h>
 	<unistd.h>
 	<stdlib.h>
@@ -17,11 +17,12 @@
 	<linux/i2c.h>
 	<linux/i2c-dev.h>
 
-1730405097 /home/nano/Documents/projects/plantonomy-nano/include/plantonomy/ADS1115.h
+1732396665 /home/nano/Documents/projects/plantonomy-nano/include/plantonomy/ADS1115.h
 	"i2c.h"
 	<cstdint>
 	<iostream>
 	<cstring>
+	"DeviceDriver.h"
 
 1730405366 source:/home/nano/Documents/projects/plantonomy-nano/src/modules/ADS1115.cpp
 	"ADS1115.h"
@@ -36,6 +37,8 @@
 	<arpa/inet.h>
 	<netinet/in.h>
 
-1730416151 source:/home/nano/Documents/projects/plantonomy-nano/src/udpServer.cpp
+1730418212 source:/home/nano/Documents/projects/plantonomy-nano/src/udpServer.cpp
 	"udpServer.h"
+
+1732396445 /home/nano/Documents/projects/plantonomy-nano/include/DeviceDriver.h
 
