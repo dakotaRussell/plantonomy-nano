@@ -1,4 +1,6 @@
 #include <string>
+#include <vector>
+#include "DeviceDriver.h"
 
 #ifndef PLANT_H
 #define PLANT_H
@@ -12,6 +14,7 @@ class Plant
 
     protected:
         std::string name;
+        std::vector<DeviceDriver> drivers;
 
     private:
 

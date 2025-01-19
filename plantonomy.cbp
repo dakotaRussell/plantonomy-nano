@@ -39,8 +39,9 @@
 		<Linker>
 			<Add library="lib/libi2c.so" />
 		</Linker>
+		<Unit filename="include/Connection.h" />
 		<Unit filename="include/DeviceDriver.h" />
-		<Unit filename="include/Module.h" />
+		<Unit filename="include/I2CComm.h" />
 		<Unit filename="include/Plant.h" />
 		<Unit filename="include/PlantManager.h" />
 		<Unit filename="include/external/i2c.h" />
@@ -48,6 +49,8 @@
 		<Unit filename="include/plantonomy/udpServer.h" />
 		<Unit filename="src/Plant.cpp" />
 		<Unit filename="src/PlantManager.cpp" />
+		<Unit filename="src/comm/Connection.cpp" />
+		<Unit filename="src/comm/I2CComm.cpp" />
 		<Unit filename="src/main.cpp" />
 		<Unit filename="src/modules/ADS1115.cpp" />
 		<Unit filename="src/modules/DeviceDriver.cpp" />

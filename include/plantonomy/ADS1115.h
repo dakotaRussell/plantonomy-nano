@@ -1,12 +1,11 @@
 #ifndef ADS1115_H
 #define ADS1115_H
-#include "i2c.h"
+
+#include <cstring>
 #include <cstdint>
 #include <iostream>
-#include <cstring>
 #include "DeviceDriver.h"
 
-#define DEFAULT_I2C_ADDR 0x48
 #define CONVERSION_REG_ADDR 0x00
 #define CONFIG_REG_ADDR 0x01
 
@@ -24,10 +23,6 @@ class ADS1115 : public DeviceDriver
 
     private:
         unsigned char buf[256];
-        I2CDevice device;
-        I2C_READ_HANDLE i2cReadHandle;
-        I2C_WRITE_HANDLE i2cWriteHandle;
-
         uint16_t readDigitalValue();
 };
 
